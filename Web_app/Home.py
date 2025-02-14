@@ -1,4 +1,5 @@
 import streamlit as st 
+import pandas
 
 st.set_page_config(layout="wide")
 
@@ -22,10 +23,12 @@ st.write(text2)
 
 col3, col4 = st.columns(2)
 
-with col3:
-    st.subheader("Task List")
-    st.image("/Users/yesus/Downloads/images/1.png")
+data = pandas.read_csv("data.csv", sep=";")
 
+with col3:
+ for index, row in data[0:10].iterrows():
+    st.subheader(row["title"])
 
 with col4:
-    st.subheader("Detector")
+   for index, row in data[10:20].iterrows():
+    st.subheader(row["title"])
