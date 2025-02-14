@@ -19,3 +19,13 @@ text2 = """Below you can find some of the apps
         I have built in python. Feel free to contact me
         """
 st.write(text2)
+
+col3, col4 = st.columns(2)
+
+with col3:
+    st.subheader("Task List")
+    st.image("/Users/yesus/Downloads/images/1.png")
+
+
+with col4:
+    st.subheader("Detector")
